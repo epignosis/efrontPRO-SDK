@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="API Live Demonstration Tool">
+    <meta name="author" content="xarhsdev">
+    <title>eFront PRO 4 &middot; API Live Demonstration Tool</title>
+    <link href="Public/CSS/Core.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <form id="api-form" class="form-horizontal">
+            <fieldset>
+              <div id="option-area">
+                <h4>* API Location</h4>
+                <input id="api-location" name="api-location" type="text" placeholder="my-domain.com/API .." class="form-control">
+                <span class="help-block">Specify the location of the API. The value is required.</span>
+                <h4>* API Key</h4>
+                <input id="api-key" name="api-key" type="text" placeholder="0123456789abcdef .." class="form-control">
+                <span class="help-block">Provide your personal private API Key to authenticate the request. The value is required.</span>
+                <h4>API Version</h4>
+                <select id="api-version" name="api-version" class="form-control selectpicker show-tick show-menu-arrow">
+                  <optgroup label="dev">
+                    <option value="0">0.9</option>
+                  </optgroup>
+                </select>
+                <span class="help-block">Select the API version.</span>
+                <h4>API Call</h4>
+                <select id="api-call" name="api-call" data-size="8" class="form-control selectpicker show-tick show-menu-arrow">
+                  <optgroup label="Branch API">
+                    <option data-http-method="GET" data-api-call="Branches" value="BranchList">Get Branch List</option>
+                    <option data-http-method="GET" data-api-call="Branch" value="BranchInfo">Get Branch Info</option>
+                  </optgroup>
+                  <optgroup label="Category API">
+                    <option data-http-method="GET" data-api-call="Categories" value="CategoryList">Get Category List</option>
+                    <option data-http-method="GET" data-api-call="Category" value="CategoryInfo">Get Category Info</option>
+                  </optgroup>
+                  <optgroup label="Course API">
+                    <option data-http-method="GET" data-api-call="Courses" value="CourseList">Get Course List</option>
+                    <option data-http-method="GET" data-api-call="Course" value="CourseInfo">Get Course Info</option>
+                  </optgroup>
+                  <optgroup label="Group API">
+                    <option data-http-method="GET" data-api-call="Groups" value="GroupList">Get Group List</option>
+                    <option data-http-method="GET" data-api-call="Group" value="GroupInfo">Get Group Info</option>
+                  </optgroup>
+                  <optgroup label="User API">
+                    <option data-http-method="GET" data-api-call="Users" value="UserList">Get User List</option>
+                    <option data-http-method="GET" data-api-call="User" value="UserInfo">Get User Info</option>
+                    <option data-http-method="GET" data-api-call="Users" value="UserListbyMail">Get User List (e-Mail)</option>
+                    <option data-http-method="PUT" data-api-call="User/:Id/Activate" value="ActivateUser">Activate User</option>
+                    <option data-http-method="PUT" data-api-call="User/:Id/Deactivate" value="DeactivateUser">Deactivate User</option>
+                    <option data-http-method="PUT" data-api-call="User" value="EditUser">Edit User</option>
+                    <option data-http-method="GET" data-api-call="Autologin" value="AutoLoginUser">Auto Login User</option>
+                    <option data-http-method="POST" data-api-call="User" value="CreateUser">Create User</option>
+                    <option data-http-method="GET" data-api-call="Logout" value="LogoutUser">Logout User</option>
+                  </optgroup>
+                  <optgroup label="System API">
+                    <option data-http-method="GET" data-api-call="System/Info" value="SystemInfo" selected>Get System Info</option>
+                  </optgroup>
+                  <optgroup label="Branch + User API">
+                    <option data-http-method="PUT" data-api-call="Branch/:Id/AddUser" value="BranchUserAdd">Add User to Branch</option>
+                  </optgroup>
+                  <optgroup label="Course + User API">
+                    <option data-http-method="GET" data-api-call="CourseUserStatus" value="CourseUserStatus">Get User Status in Course</option>
+                    <option data-http-method="PUT" data-api-call="Course/:Id/AddUser" value="CourseUserAdd">Add User to Course</option>
+                    <option data-http-method="PUT" data-api-call="Course/:Id/RemoveUser" value="CourseUserRemove">Remove User from Course</option>
+                  </optgroup>
+                  <optgroup label="Group + User API">
+                    <option data-http-method="PUT" data-api-call="Group/:Id/AddUser" value="GroupUserAdd">Add User to Group</option>
+                    <option data-http-method="PUT" data-api-call="Group/:Id/RemoveUser" value="GroupUserRemove">Remove User from Group</option>
+                  </optgroup>
+                </select>
+                <span id="api-call-helper" class="help-block">Select the API call.</span>
+              </div>
+              <div id="action-area" class="text-center">
+                <button id="execute" name="execute" class="btn btn-success">Execute</button>
+                <span class="help-block">Click to execute the specified API call.</span>
+                <input type="checkbox" name="clear-console-option" id="clear-console-option" value="1" checked> Clear console, on execution.
+              </div>
+              <div id="tool-info" class="text-right"><strong>eFront PRO 4 API &middot; Live Demonstration Tool</strong><br><small>(ver. 2.1.2-beta)</small></div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="col-lg-8">
+          <button id="clear-console" name="clear-console" class="btn btn-warning">Clear</button>
+          <div class="console border-radius" id="console">
+            $ eFront PRO 4 API Console. Welcome! (ver.2.1.2-beta)<br><br>
+            Provide all the required information, in order to execute your request.<br><br>
+            Current API Call Count: <strong>24</strong><br><br><br>
+            Enjoy!
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="Public/JS/Core.min.js"></script>
+  </body>
+</html>
