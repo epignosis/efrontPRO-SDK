@@ -1,7 +1,7 @@
 efrontPRO-SDK
 =============
 
-https://insight.sensiolabs.com/projects/f466bf0a-a1b5-47aa-8878-bcd18396b8d5/big.png
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f466bf0a-a1b5-47aa-8878-bcd18396b8d5/big.png)](https://insight.sensiolabs.com/projects/f466bf0a-a1b5-47aa-8878-bcd18396b8d5)
 
 eFront PRO provides a comprehensive REST JSON API that allows interaction with remote services. 
 Authentication is based on an API key that is defined under your installation’s system settings. 
