@@ -1,6 +1,5 @@
 efrontPRO-SDK
 =============
-
 eFront PRO provides a comprehensive REST JSON API that allows interaction with remote services. 
 Authentication is based on an API key that is defined under your installation’s system settings. 
 The functionality provided focuses on performing tasks meaningful for a remote service, such as 
