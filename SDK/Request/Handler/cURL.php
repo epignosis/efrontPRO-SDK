@@ -16,12 +16,12 @@ class cURL implements RequestHandlerInterface
   {
     $response = curl_exec($this->_curl);
 
-		if($response === false)
+    if($response === false)
     {
       throw new cURLException (
         curl_error($this->_curl), curl_errno($this->_curl)
       );
-		}
+    }
 
     return $response;
   }
@@ -53,7 +53,7 @@ class cURL implements RequestHandlerInterface
 
   public function Close()
   {
-    if ($this->_curl != null)
+    if ($this->_curl !== null)
     {
       curl_close($this->_curl);
 
@@ -74,7 +74,7 @@ class cURL implements RequestHandlerInterface
 
   public function Init($sdkVersion)
   {
-    if ($this->_curl == null)
+    if ($this->_curl === null)
     {
       $this->_curl = curl_init();
 
@@ -128,7 +128,7 @@ class cURL implements RequestHandlerInterface
 
   public function Reset()
   {
-    if ($this->_curl != null)
+    if ($this->_curl !== null)
     {
       curl_reset($this->_curl);
     }
