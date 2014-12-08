@@ -5,7 +5,7 @@ use Factory\Handler\API as APIHandlerFactory;
 
 class eFrontProSDK
 {
-  private static $_sdkVersion = '0.9-dev';
+  private static $_sdkVersion = '1.0';
 
   private $_apiFactory = null;
   private $_apiKey = null;
