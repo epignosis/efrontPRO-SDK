@@ -16,8 +16,7 @@ abstract class AbstractAPI
 
   protected function _CheckId($id)
   {
-    if (!filter_var($id, FILTER_VALIDATE_INT))
-    {
+    if (!filter_var($id, FILTER_VALIDATE_INT)) {
       throw new \Exception (
         'Invalid Id. Id MUST be a positive integer.'
       );
@@ -28,7 +27,9 @@ abstract class AbstractAPI
 
   protected function _GetAPICallURL($suffix)
   {
-    return $this->_apiLocation . '/v' . $this->_apiVersion . $suffix;
+    return
+        $this->_apiLocation . '/v' .
+        (string) $this->_apiVersion . $suffix;
   }
 
   public function __construct(RequestHandlerInterface $requestHandler)

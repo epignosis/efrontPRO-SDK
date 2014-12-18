@@ -16,8 +16,7 @@ class cURL implements RequestHandlerInterface
   {
     $response = curl_exec($this->_curl);
 
-    if($response === false)
-    {
+    if($response === false) {
       throw new cURLException (
         curl_error($this->_curl), curl_errno($this->_curl)
       );
@@ -28,8 +27,7 @@ class cURL implements RequestHandlerInterface
 
   private function _SetOptionList()
   {
-    if (!curl_setopt_array($this->_curl, $this->_optionList))
-    {
+    if (!curl_setopt_array($this->_curl, $this->_optionList)) {
       throw new cURLException (
         'cURL was failed to set the appropriate options.'
       );
@@ -42,8 +40,7 @@ class cURL implements RequestHandlerInterface
   {
     // Needs an improvement (cURL version).
 
-    if (!extension_loaded('curl'))
-    {
+    if (!extension_loaded('curl')) {
       throw new cURLException (
         'cURL extension is not loaded. You can enable this ' .
         'extension through the php.ini file'
@@ -53,8 +50,7 @@ class cURL implements RequestHandlerInterface
 
   public function Close()
   {
-    if ($this->_curl !== null)
-    {
+    if ($this->_curl !== null) {
       curl_close($this->_curl);
 
       $this->_curl = null;
@@ -74,12 +70,10 @@ class cURL implements RequestHandlerInterface
 
   public function Init($sdkVersion)
   {
-    if ($this->_curl === null)
-    {
+    if ($this->_curl === null) {
       $this->_curl = curl_init();
 
-      if ($this->_curl === false)
-      {
+      if ($this->_curl === false) {
         throw new cURLException (
           'cURL initialization was failed.'
         );
@@ -128,8 +122,7 @@ class cURL implements RequestHandlerInterface
 
   public function Reset()
   {
-    if ($this->_curl !== null)
-    {
+    if ($this->_curl !== null) {
       curl_reset($this->_curl);
     }
 

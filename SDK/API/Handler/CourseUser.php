@@ -41,7 +41,7 @@ class CourseUser extends AbstractAPI
     );
   }
 
-  public function UpdateStatus($userId, $courseId)
+  public function UpdateStatus($userId, $courseId, array $info = [])
   {
       $this->_CheckId($userId)->_CheckId($courseId);
 
@@ -49,7 +49,8 @@ class CourseUser extends AbstractAPI
           $this->_GetAPICallURL (
               '/CourseUserStatus/' . $courseId . ',' . $userId
           ),
-          $this->_apiKey
+          $this->_apiKey,
+          $info
       );
   }
 }

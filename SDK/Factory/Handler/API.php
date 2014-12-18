@@ -14,16 +14,12 @@ class API
 
   private function _Register($instance)
   {
-    $api =
-      'API\Handler\\'.
-      $instance;
+    $api = 'API\Handler\\'. $instance;
       
-    try
-    {
+    try {
       $this->_apiList[$instance] = new $api($this->_requestHandler);
     }
-    catch (\Exception $e)
-    {
+    catch (\Exception $e) {
       throw new FactoryAPIException (
         $instance . ' API, couldn\'t be registered.'
       );
@@ -49,8 +45,7 @@ class API
 
   public function Get($instance)
   {
-    if (!isset($this->_apiList[$instance]))
-    {
+    if (!isset($this->_apiList[$instance])) {
       $this->_Register($instance);
     }
 
