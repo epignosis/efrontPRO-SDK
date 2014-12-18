@@ -40,4 +40,16 @@ class CourseUser extends AbstractAPI
       ['UserId' => $userId]
     );
   }
+
+  public function UpdateStatus($userId, $courseId)
+  {
+      $this->_CheckId($userId)->_CheckId($courseId);
+
+      return $this->_requestHandler->Post (
+          $this->_GetAPICallURL (
+              '/CourseUserStatus/' . $courseId . ',' . $userId
+          ),
+          $this->_apiKey
+      );
+  }
 }
