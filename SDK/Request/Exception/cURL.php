@@ -2,7 +2,6 @@
 
 namespace Request\Exception;
 
-
 /**
  * Class cURL
  *

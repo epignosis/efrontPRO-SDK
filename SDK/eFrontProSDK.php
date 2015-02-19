@@ -3,7 +3,6 @@
 use API\Abstraction\AbstractAPI;
 use Factory\Handler\API as APIHandlerFactory;
 
-
 /**
  * Class eFrontProSDK
  *
