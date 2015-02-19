@@ -7,8 +7,7 @@ spl_autoload_register (function ($class) {
     '\\', DIRECTORY_SEPARATOR, DOCUMENT_ROOT . $class . '.php'
   );
 
-  if (!file_exists($file))
-  {
+  if (!file_exists($file)) {
     throw new \RuntimeException($file);
   }
 

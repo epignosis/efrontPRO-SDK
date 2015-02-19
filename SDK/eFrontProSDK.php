@@ -47,9 +47,9 @@ class eFrontProSDK
    */
   public function Config($apiVersion, $apiLocation, $apiKey)
   {
-    $this->_apiKey = trim($apiKey);
+    $this->_apiKey      = trim($apiKey);
     $this->_apiLocation = rtrim(trim($apiLocation), '/');
-    $this->_apiVersion = rtrim(trim($apiVersion), '/');
+    $this->_apiVersion  = rtrim(trim($apiVersion), '/');
 
     return $this;
   }
