@@ -1,2 +1,2 @@
-efrontPRO-SDK Change-Log
-========================
+Change-Log
+==========
