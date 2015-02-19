@@ -4,7 +4,6 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
-
 class CourseUser extends AbstractAPI
 {
   public function AddRelation($userId, $courseId)

@@ -4,7 +4,6 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
-
 class CourseList extends AbstractAPI
 {
   public function GetAll()

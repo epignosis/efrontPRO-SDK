@@ -4,7 +4,6 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
-
 class Category extends AbstractAPI
 {
   public function GetInfo($id)

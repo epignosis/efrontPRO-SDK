@@ -4,7 +4,6 @@ namespace API\Abstraction;
 
 use Request\Abstraction\RequestHandlerInterface;
 
-
 abstract class AbstractAPI
 {
   private $_apiLocation = null;

@@ -4,7 +4,6 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
-
 class User extends AbstractAPI
 {
   public function Activate($id)

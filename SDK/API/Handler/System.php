@@ -4,7 +4,6 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
-
 class System extends AbstractAPI
 {
   public function GetInfo()
