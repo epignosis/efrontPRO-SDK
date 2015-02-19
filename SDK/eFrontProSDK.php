@@ -1,18 +1,33 @@
 <?php
 
+use API\Abstraction\AbstractAPI;
 use Factory\Handler\API as APIHandlerFactory;
 
 
+/**
+ * Class eFrontProSDK
+ *
+ * @package     SDK
+ * @author      EPIGNOSIS
+ * @version     1.0
+ * @release     2014-11-19
+ *
+ */
 class eFrontProSDK
 {
-  private static $_sdkVersion = '1.0';
-
   private $_apiFactory = null;
   private $_apiKey = null;
   private $_apiLocation = null;
   private $_apiVersion = null;
+  private static $_sdkVersion = '1.0';
 
 
+  /**
+   * Constructs the SDK.
+   *
+   * @param   APIHandlerFactory $apiFactory
+   *
+   */
   public function __construct(APIHandlerFactory $apiFactory)
   {
     $this->_apiFactory = $apiFactory;
@@ -20,9 +35,17 @@ class eFrontProSDK
     $this->_apiFactory->Init(self::$_sdkVersion);
   }
 
-  public function Config (
-    $apiVersion = null, $apiLocation = null, $apiKey = null
-  )
+  /**
+   * Configure the API.
+   *
+   * @param   string $apiVersion  (Required) | The API version to
+   *                                           be used.
+   * @param   string $apiLocation (Required) | The API location.
+   * @param   string $apiKey      (Required) | The API key.
+   *
+   * @return  $this
+   */
+  public function Config($apiVersion, $apiLocation, $apiKey)
   {
     $this->_apiKey = trim($apiKey);
     $this->_apiLocation = rtrim(trim($apiLocation), '/');
@@ -31,7 +54,15 @@ class eFrontProSDK
     return $this;
   }
 
-  public function GetAPI($apiType = null)
+  /**
+   * Returns the requested entity of the API.
+   *
+   * @param   string $apiType (Required) | The entity type of the API.
+   *
+   * @return  AbstractAPI
+   *
+   */
+  public function GetAPI($apiType)
   {
     return
       $this->_apiFactory->Get($apiType)->Config (
@@ -39,21 +70,45 @@ class eFrontProSDK
       );
   }
 
+  /**
+   * Returns the API key.
+   *
+   * @return  string
+   *
+   */
   public function GetAPIKey()
   {
     return $this->_apiKey;
   }
 
+  /**
+   * Returns the API location, for example "my-domain.com/API".
+   *
+   * @return  string
+   *
+   */
   public function GetAPILocation()
   {
     return $this->_apiLocation;
   }
 
+  /**
+   * Returns the API version.
+   *
+   * @return  string
+   *
+   */
   public function GetAPIVersion()
   {
     return $this->_apiVersion;
   }
 
+  /**
+   * Returns the current SDK version.
+   *
+   * @return  string
+   *
+   */
   public function GetSDKVersion()
   {
     return self::$_sdkVersion;
