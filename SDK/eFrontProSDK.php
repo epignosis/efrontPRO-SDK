@@ -14,10 +14,49 @@ use Factory\Handler\API as APIHandlerFactory;
  */
 class eFrontProSDK
 {
+  /**
+   * The API factory.
+   *
+   * @var       APIHandlerFactory
+   * @default   null
+   *
+   */
   private $_apiFactory = null;
+
+  /**
+   * The API key.
+   *
+   * @var       string
+   * @default   null
+   *
+   */
   private $_apiKey = null;
+
+  /**
+   * The API location.
+   *
+   * @var       string
+   * @default   null
+   *
+   */
   private $_apiLocation = null;
+
+  /**
+   * The API version.
+   *
+   * @var       string
+   * @default   null
+   *
+   */
   private $_apiVersion = null;
+
+  /**
+   * The SDK version.
+   *
+   * @var       string
+   * @default   1.0
+   *
+   */
   private static $_sdkVersion = '1.0';
 
 
