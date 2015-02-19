@@ -76,12 +76,13 @@ class eFrontProSDK
   /**
    * Configure the API.
    *
-   * @param   string $apiVersion  (Required) | The API version to
-   *                                           be used.
+   * @param   string $apiVersion  (Required) | The API version to be
+   *                                           used.
    * @param   string $apiLocation (Required) | The API location.
-   * @param   string $apiKey      (Required) | The API key.
+   * @param   string $apiKey      (Required) | The API key to be used.
    *
    * @return  $this
+   *
    */
   public function Config($apiVersion, $apiLocation, $apiKey)
   {
