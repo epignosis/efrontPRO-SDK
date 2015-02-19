@@ -25,7 +25,7 @@ interface RequestHandlerInterface
    * @param    string $url    (Required) | The HTTP/GET URL.
    * @param    string $apiKey (Required) | The API key.
    *
-   * @return   string
+   * @return   mixed
    *
    */
   public function Get($url, $apiKey);
@@ -52,13 +52,13 @@ interface RequestHandlerInterface
    *                                                      parameter
    *                                                      list.
    *
-   * @return   string
+   * @return   mixed
    *
    */
   public function Post($url, $apiKey, array $postParameterList = []);
 
   /**
-   * Executes an HTTP/POST request and returns its response.
+   * Executes an HTTP/PUT request and returns its response.
    *
    * @param    string $url              (Required)     | The HTTP/PUT
    *                                                     URL.
@@ -67,7 +67,7 @@ interface RequestHandlerInterface
    *                                                     parameter
    *                                                     list.
    *
-   * @return   string
+   * @return   mixed
    *
    */
   public function Put($url, $apiKey, array $putParameterList = []);

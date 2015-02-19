@@ -5,13 +5,42 @@ namespace Request\Handler;
 use Request\Abstraction\RequestHandlerInterface;
 use Request\Exception\cURL as cURLException;
 
-
+/**
+ * Class cURL
+ *
+ * @package   Request\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class cURL implements RequestHandlerInterface
 {
+  /**
+   * The cURL handler.
+   *
+   * @var       Resource
+   * @default   null
+   *
+   */
   private $_curl = null;
+
+  /**
+   * The list of options.
+   *
+   * @var       array (Associative)
+   * @default   []
+   *
+   */
   private $_optionList = [];
 
 
+  /**
+   * Executes the given cURL session.
+   *
+   * @throws  cURLException
+   *
+   * @return  mixed
+   *
+   */
   private function _Exec()
   {
     $response = curl_exec($this->_curl);
@@ -25,29 +54,44 @@ class cURL implements RequestHandlerInterface
     return $response;
   }
 
+  /**
+   * Set the options to the current cURL session.
+   *
+   * @throws  cURLException
+   *
+   * @return  $this
+   *
+   */
   private function _SetOptionList()
   {
     if (!curl_setopt_array($this->_curl, $this->_optionList)) {
-      throw new cURLException (
-        'cURL was failed to set the appropriate options.'
-      );
+      throw new cURLException('Request.cURL.SetOptionsFailure');
     }
 
     return $this;
   }
 
+  /**
+   * Constructs the cURL request handler.
+   *
+   * @throws  cURLException
+   *
+   */
   public function __construct()
   {
-    // Needs an improvement (cURL version).
-
     if (!extension_loaded('curl')) {
-      throw new cURLException (
-        'cURL extension is not loaded. You can enable this ' .
-        'extension through the php.ini file'
-      );
+      throw new cURLException('Request.cURL.ExtensionNotLoaded');
     }
   }
 
+  /**
+   * Closes the request handler.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @return      $this
+   *
+   */
   public function Close()
   {
     if ($this->_curl !== null) {
@@ -59,6 +103,17 @@ class cURL implements RequestHandlerInterface
     return $this;
   }
 
+  /**
+   * Executes an HTTP/GET request and returns its response.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @param       string $url    (Required) | The HTTP/GET URL.
+   * @param       string $apiKey (Required) | The API key.
+   *
+   * @return      mixed
+   *
+   */
   public function Get($url, $apiKey)
   {
     $this->_optionList[CURLOPT_URL]           = $url;
@@ -68,15 +123,26 @@ class cURL implements RequestHandlerInterface
     return $this->_SetOptionList()->_Exec();
   }
 
+  /**
+   * Initializes the request handler.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @param       string $sdkVersion (Required) | The SDK version to
+   *                                              be used.
+   *
+   * @throws      cURLException
+   *
+   * @return      mixed
+   *
+   */
   public function Init($sdkVersion)
   {
     if ($this->_curl === null) {
       $this->_curl = curl_init();
 
       if ($this->_curl === false) {
-        throw new cURLException (
-          'cURL initialization was failed.'
-        );
+        throw new cURLException('Request.cURL.InitializationFailure');
       }
     }
 
@@ -96,6 +162,23 @@ class cURL implements RequestHandlerInterface
     return $this;
   }
 
+  /**
+   * Executes an HTTP/POST request and returns its response.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @param       string $url               (Required)     | The
+   *                                                         HTTP/POST
+   *                                                         URL.
+   * @param       string $apiKey            (Required)     | The API
+   *                                                         key.
+   * @param       array  $postParameterList (Optional, []) | The POST
+   *                                                         parameter
+   *                                                         list.
+   *
+   * @return      mixed
+   *
+   */
   public function Post($url, $apiKey, array $postParameterList = [])
   {
     $this->_optionList[CURLOPT_URL]           = $url;
@@ -108,6 +191,23 @@ class cURL implements RequestHandlerInterface
     return $this->_SetOptionList()->_Exec();
   }
 
+  /**
+   * Executes an HTTP/PUT request and returns its response.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @param       string $url              (Required)     | The
+   *                                                        HTTP/PUT
+   *                                                        URL.
+   * @param       string $apiKey           (Required)     | The API
+   *                                                        key.
+   * @param       array  $putParameterList (Optional, []) | The PUT
+   *                                                        parameter
+   *                                                        list.
+   *
+   * @return      mixed
+   *
+   */
   public function Put($url, $apiKey, array $putParameterList = [])
   {
     $this->_optionList[CURLOPT_URL]           = $url;
@@ -120,6 +220,14 @@ class cURL implements RequestHandlerInterface
     return $this->_SetOptionList()->_Exec();
   }
 
+  /**
+   * Resets the request handler.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @return      $this
+   *
+   */
   public function Reset()
   {
     if ($this->_curl !== null) {
@@ -129,9 +237,18 @@ class cURL implements RequestHandlerInterface
     return $this;
   }
 
+  /**
+   * Set the options for the referenced request handler.
+   *
+   * @implements  RequestHandlerInterface
+   *
+   * @param       array $optionList (Required) | The option list.
+   *
+   * @return      $this
+   *
+   */
   public function SetOptionList(array $optionList = [])
   {
-    // Needs an improvement (Validate Option List).
     $this->_optionList = $optionList;
 
     return $this;
