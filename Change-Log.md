@@ -2,7 +2,7 @@ Change-Log
 ==========
 
 ### Version 1.0 &middot; 2014-11-19
-#### API Calls
+#### [Features]
 ##### Branches
 + Get information about a `Branch`.
 + Get the `Branch` list.
