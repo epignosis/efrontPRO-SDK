@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class BranchUser
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class BranchUser extends AbstractAPI
 {
   public function AddRelation($userId, $branchId)

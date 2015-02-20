@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class CategoryList
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class CategoryList extends AbstractAPI
 {
   public function GetAll()

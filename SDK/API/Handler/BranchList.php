@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class BranchList
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class BranchList extends AbstractAPI
 {
   public function GetAll()

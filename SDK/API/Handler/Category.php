@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class Category
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class Category extends AbstractAPI
 {
   public function GetInfo($id)

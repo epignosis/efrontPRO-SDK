@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class Branch
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class Branch extends AbstractAPI
 {
   public function GetInfo($id)
