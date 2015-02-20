@@ -1,5 +1,10 @@
 Change-Log
 ==========
+#### Version 1.2 @ 2014-02-20
+[Features]
++ QA improvement.
++ Get information about a specific `Plugin`.
++ Get the complete list of the `Plugins`.
 
 #### Version 1.0 @ 2014-11-19
 [Features]
