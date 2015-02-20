@@ -7,6 +7,10 @@ Change-Log
 + Get the complete list of the `Plugins`.
 + Post data to be used by the specified `Plugin`.
 
+[Changes]
++ Add cookie and cookie_token attributes to the response of `User` information retrieval.
+
+
 #### Version 1.0 @ 2014-11-19
 [Features]
 + Get information about a specific `Branch`.
