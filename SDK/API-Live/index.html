@@ -73,6 +73,10 @@
                     <option data-http-method="PUT" data-api-call="Group/:Id/AddUser" value="GroupUserAdd">Add User to Group</option>
                     <option data-http-method="PUT" data-api-call="Group/:Id/RemoveUser" value="GroupUserRemove">Remove User from Group</option>
                   </optgroup>
+                  <optgroup label="Plugin API">
+                    <option data-http-method="GET" data-api-call="Plugins" value="PluginList">Get Plugin List</option>
+                    <option data-http-method="GET" data-api-call="Plugin/:pluginName" value="PluginInfo">Get Plugin Info</option>
+                  </optgroup>
                 </select>
                 <span id="api-call-helper" class="help-block">Select the API call.</span>
               </div>
@@ -81,16 +85,16 @@
                 <span class="help-block">Click to execute the specified API call.</span>
                 <input type="checkbox" name="clear-console-option" id="clear-console-option" value="1" checked> Clear console, on execution.
               </div>
-              <div id="tool-info" class="text-right"><strong>eFront PRO 4 API &middot; Live Demonstration Tool</strong><br><small>(ver. 1.25)</small></div>
+              <div id="tool-info" class="text-right"><strong>eFront PRO 4 API &middot; Live Demonstration Tool</strong><br><small>(ver. 1.4)</small></div>
             </fieldset>
           </form>
         </div>
         <div class="col-lg-8">
           <button id="clear-console" name="clear-console" class="btn btn-warning">Clear</button>
           <div class="console border-radius" id="console">
-            $ eFront PRO 4 API Console. Welcome! (ver. 1.25)<br><br>
+            $ eFront PRO 4 API Console. Welcome! (ver. 1.4)<br><br>
             Provide all the required information, in order to execute your request.<br><br>
-            API Available Methods: <strong>24</strong><br><br><br>
+            API Available Methods: <strong>27</strong><br><br><br>
             Enjoy!
           </div>
         </div>
