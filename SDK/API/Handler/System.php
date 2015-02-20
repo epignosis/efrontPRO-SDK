@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class System
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class System extends AbstractAPI
 {
   public function GetInfo()

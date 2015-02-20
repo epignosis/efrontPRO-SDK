@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class CourseUser
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class CourseUser extends AbstractAPI
 {
   public function AddRelation($userId, $courseId)

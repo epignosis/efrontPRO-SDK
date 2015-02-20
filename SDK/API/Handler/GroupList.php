@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class GroupList
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class GroupList extends AbstractAPI
 {
   public function GetAll()
