@@ -17,8 +17,7 @@ class cURL implements RequestHandlerInterface
   /**
    * The cURL handler.
    *
-   * @var       Resource
-   * @default   null
+   * @var   Resource
    *
    */
   private $_curl = null;
@@ -26,8 +25,7 @@ class cURL implements RequestHandlerInterface
   /**
    * The list of options.
    *
-   * @var       array (Associative)
-   * @default   []
+   * @var   array (Associative)
    *
    */
   private $_optionList = [];

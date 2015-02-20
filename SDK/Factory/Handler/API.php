@@ -18,8 +18,7 @@ class API
   /**
    * The API list which contains the registered entities.
    *
-   * @var       array (Associative)
-   * @default   []
+   * @var   array (Associative)
    *
    */
   private $_apiList = [];
@@ -27,8 +26,7 @@ class API
   /**
    * The request handler.
    *
-   * @var       RequestHandlerInterface
-   * @default   null
+   * @var   RequestHandlerInterface
    *
    */
   private $_requestHandler = null;

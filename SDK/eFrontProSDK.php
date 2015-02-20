@@ -17,8 +17,7 @@ class eFrontProSDK
   /**
    * The API factory.
    *
-   * @var       APIHandlerFactory
-   * @default   null
+   * @var   APIHandlerFactory
    *
    */
   private $_apiFactory = null;
@@ -26,8 +25,7 @@ class eFrontProSDK
   /**
    * The API key.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   private $_apiKey = null;
@@ -35,8 +33,7 @@ class eFrontProSDK
   /**
    * The API location.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   private $_apiLocation = null;
@@ -44,8 +41,7 @@ class eFrontProSDK
   /**
    * The API version.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   private $_apiVersion = null;
@@ -53,8 +49,7 @@ class eFrontProSDK
   /**
    * The SDK version.
    *
-   * @var       string
-   * @default   1.0
+   * @var   string
    *
    */
   private static $_sdkVersion = '1.2.0';

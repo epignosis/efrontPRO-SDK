@@ -16,8 +16,7 @@ abstract class AbstractAPI
   /**
    * The API location.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   private $_apiLocation = null;
@@ -25,8 +24,7 @@ abstract class AbstractAPI
   /**
    * The API version.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   private $_apiVersion = null;
@@ -34,8 +32,7 @@ abstract class AbstractAPI
   /**
    * The API key.
    *
-   * @var       string
-   * @default   null
+   * @var   string
    *
    */
   protected $_apiKey = null;
@@ -43,8 +40,7 @@ abstract class AbstractAPI
   /**
    * The request handler.
    *
-   * @var       RequestHandlerInterface
-   * @default   null
+   * @var   RequestHandlerInterface
    *
    */
   protected $_requestHandler = null;
