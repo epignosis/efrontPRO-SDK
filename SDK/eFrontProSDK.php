@@ -9,7 +9,7 @@ use Factory\Handler\API as APIHandlerFactory;
  * @package     SDK
  * @author      EPIGNOSIS
  * @version     1.2.0
- * @release     2015-11-19
+ * @release     2015-02-20
  *
  */
 class eFrontProSDK
