@@ -1,9 +1,8 @@
 Change-Log
 ==========
 
-### Version 1.0 &middot; 2014-11-19
-#### [Features]
-##### Branches
-+ Get information about a `Branch`.
-+ Get the `Branch` list.
-+ Add a `User` into a `Branch`.
+#### Version 1.0 @ 2014-11-19
+[Features]
++ Get information about a specific `Branch`.
++ Get the complete list of `Branches`.
++ Assign the specified `User` into the specified `Branch`.
