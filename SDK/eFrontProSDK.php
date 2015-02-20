@@ -8,8 +8,8 @@ use Factory\Handler\API as APIHandlerFactory;
  *
  * @package     SDK
  * @author      EPIGNOSIS
- * @version     1.0
- * @release     2014-11-19
+ * @version     1.2.0
+ * @release     2015-11-19
  *
  */
 class eFrontProSDK
@@ -57,7 +57,7 @@ class eFrontProSDK
    * @default   1.0
    *
    */
-  private static $_sdkVersion = '1.0';
+  private static $_sdkVersion = '1.2.0';
 
 
   /**
