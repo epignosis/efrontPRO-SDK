@@ -6,3 +6,6 @@ Change-Log
 + Get information about a specific `Branch`.
 + Get the complete list of `Branches`.
 + Assign the specified `User` into the specified `Branch`.
++ Get information about a specific `Category`.
++ Get the complete list of `Categories`.
++ Get information about a specific `Course`.
