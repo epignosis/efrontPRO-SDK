@@ -14,3 +14,6 @@ Change-Log
 + Remove the specified `User` from the specified `Course`.
 + Check the status of a specific `User` in a specific `Course`.
 + Update the status of a specific `User` in a specific `Course`.
++ Get information about a specific `Group`.
++ Get the complete list of the `Groups`.
++ Get the `System` information.
