@@ -2,9 +2,10 @@ Change-Log
 ==========
 #### Version 1.2 @ 2014-02-20
 [Features]
-+ QA improvement.
++ SDK source QA improvement.
 + Get information about a specific `Plugin`.
 + Get the complete list of the `Plugins`.
++ Post data to be used by the specified `Plugin`.
 
 #### Version 1.0 @ 2014-11-19
 [Features]
