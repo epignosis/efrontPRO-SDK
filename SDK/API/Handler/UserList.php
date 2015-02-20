@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class UserList
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class UserList extends AbstractAPI
 {
   public function GetAll()

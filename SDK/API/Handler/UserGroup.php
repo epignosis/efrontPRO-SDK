@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class UserGroup
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class UserGroup extends AbstractAPI
 {
   public function AddRelation($userId, $groupId)

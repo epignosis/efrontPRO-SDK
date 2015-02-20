@@ -4,6 +4,13 @@ namespace API\Handler;
 
 use API\Abstraction\AbstractAPI;
 
+/**
+ * Class User
+ *
+ * @package   API\Handler
+ * @author    EPIGNOSIS
+ *
+ */
 class User extends AbstractAPI
 {
   public function Activate($id)
