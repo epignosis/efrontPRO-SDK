@@ -8,7 +8,7 @@ Change-Log
 + Post data to be used by the specified `Plugin`.
 
 [Changes]
-+ Add cookie and cookie_token attributes to the response of `User` information retrieval.
++ Added cookie and cookie_token attributes to the response of `User` information retrieval.
 
 
 #### Version 1.0 @ 2014-11-19
