@@ -13,6 +13,16 @@ use API\Abstraction\AbstractAPI;
  */
 class Category extends AbstractAPI
 {
+  /**
+   * Returns information about the requested category.
+   *
+   * @param   mixed $id (Required) | The category identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetInfo($id)
   {
     $this->_CheckId($id);

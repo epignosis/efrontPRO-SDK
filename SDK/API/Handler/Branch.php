@@ -13,6 +13,16 @@ use API\Abstraction\AbstractAPI;
  */
 class Branch extends AbstractAPI
 {
+  /**
+   * Returns information about the requested branch.
+   *
+   * @param   mixed $id (Required) | The branch identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetInfo($id)
   {
     $this->_CheckId($id);

@@ -13,6 +13,14 @@ use API\Abstraction\AbstractAPI;
  */
 class CategoryList extends AbstractAPI
 {
+  /**
+   * Returns the complete list of categories.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetAll()
   {
     return $this->_requestHandler->Get (
