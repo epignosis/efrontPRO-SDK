@@ -13,6 +13,16 @@ use API\Abstraction\AbstractAPI;
  */
 class Group extends AbstractAPI
 {
+  /**
+   * Returns information about the requested group.
+   *
+   * @param   mixed $id (Required) | The group identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetInfo($id)
   {
     $this->_CheckId($id);

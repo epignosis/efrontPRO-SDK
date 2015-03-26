@@ -14,7 +14,7 @@ use API\Abstraction\AbstractAPI;
 class CourseList extends AbstractAPI
 {
   /**
-   * Returns the complete list of the courses.
+   * Returns the complete list of courses.
    *
    * @throws  \Exception
    *
