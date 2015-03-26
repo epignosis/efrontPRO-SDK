@@ -13,7 +13,6 @@ use API\Abstraction\AbstractAPI;
  */
 class Plugin extends AbstractAPI
 {
-
   /**
    * Validates the plugin name.
    *

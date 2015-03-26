@@ -13,6 +13,14 @@ use API\Abstraction\AbstractAPI;
  */
 class System extends AbstractAPI
 {
+  /**
+   * Returns the system information.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetInfo()
   {
     return $this->_requestHandler->Get (

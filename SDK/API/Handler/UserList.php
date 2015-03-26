@@ -13,6 +13,14 @@ use API\Abstraction\AbstractAPI;
  */
 class UserList extends AbstractAPI
 {
+  /**
+   * Returns the complete user list.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetAll()
   {
     return $this->_requestHandler->Get (
@@ -20,6 +28,16 @@ class UserList extends AbstractAPI
     );
   }
 
+  /**
+   * Returns any user with the requested email as email.
+   *
+   * @param   string $mail (Required) | The email identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetAllByMail($mail)
   {
     $mail = urlencode($mail);
