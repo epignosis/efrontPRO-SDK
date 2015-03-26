@@ -13,6 +13,17 @@ use API\Abstraction\AbstractAPI;
  */
 class BranchUser extends AbstractAPI
 {
+  /**
+   * Creates a relation between the requested user and branch.
+   *
+   * @param   mixed $userId   (Required) | The user identifier.
+   * @param   mixed $branchId (Required) | The branch identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function AddRelation($userId, $branchId)
   {
     $this->_CheckId($userId)->_CheckId($branchId);

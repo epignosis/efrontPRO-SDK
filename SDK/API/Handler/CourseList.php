@@ -13,6 +13,14 @@ use API\Abstraction\AbstractAPI;
  */
 class CourseList extends AbstractAPI
 {
+  /**
+   * Returns the complete list of the courses.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetAll()
   {
     return $this->_requestHandler->Get (

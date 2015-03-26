@@ -13,6 +13,16 @@ use API\Abstraction\AbstractAPI;
  */
 class Course extends AbstractAPI
 {
+  /**
+   * Returns information about the requested course.
+   *
+   * @param   mixed $id (Required) | The course identifier.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
   public function GetInfo($id)
   {
     $this->_CheckId($id);
