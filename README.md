@@ -1,5 +1,6 @@
 efrontPRO-SDK
 =============
+[![Build Status](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/?branch=master)
 
 eFront PRO provides a comprehensive REST JSON API that allows interaction with remote services. 
