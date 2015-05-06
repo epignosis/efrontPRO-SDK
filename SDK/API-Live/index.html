@@ -35,6 +35,7 @@
                 <h4>API Call</h4>
                 <select id="api-call" name="api-call" data-size="8" class="form-control selectpicker show-tick show-menu-arrow">
                   <optgroup label="Branch API">
+                    <option data-http-method="POST" data-api-call="Branch" value="CreateBranch">Create Branch</option>
                     <option data-http-method="GET" data-api-call="Branches" value="BranchList">Get Branch List</option>
                     <option data-http-method="GET" data-api-call="Branch" value="BranchInfo">Get Branch Info</option>
                   </optgroup>
@@ -90,16 +91,16 @@
                 <span class="help-block">Click to execute the specified API call.</span>
                 <input type="checkbox" name="clear-console-option" id="clear-console-option" value="1" checked> Clear console, on execution.
               </div>
-              <div id="tool-info" class="text-right"><strong>eFront PRO 4 API &middot; Live Demonstration Tool</strong><br><small>(ver. 1.4)</small></div>
+              <div id="tool-info" class="text-right"><strong>eFront PRO 4 API &middot; Live Demonstration Tool</strong><br><small>(ver. 1.6)</small></div>
             </fieldset>
           </form>
         </div>
         <div class="col-lg-8">
           <button id="clear-console" name="clear-console" class="btn btn-warning">Clear</button>
           <div class="console border-radius" id="console">
-            $ eFront PRO 4 API Console. Welcome! (ver. 1.4)<br><br>
+            $ eFront PRO 4 API Console. Welcome! (ver. 1.6)<br><br>
             Provide all the required information, in order to execute your request.<br><br>
-            API Available Methods: <strong>27</strong><br><br><br>
+            API Available Methods: <strong>29</strong><br><br><br>
             Enjoy!
           </div>
         </div>
