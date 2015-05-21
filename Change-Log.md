@@ -1,5 +1,8 @@
 Change-Log
 ==========
+### Version 1.2.1 @ 2014-05-21
++ QA Improvements.
+
 #### Version 1.2 @ 2014-02-20
 [Features]
 + SDK source QA improvement.
