@@ -14,6 +14,27 @@ use API\Abstraction\AbstractAPI;
 class User extends AbstractAPI
 {
   /**
+   * Changes the status of the user.
+   *
+   * @param   mixed  $id     (Required) | The user identifier.
+   * @param   string $status (Required) | The new status.
+   *
+   * @throws  \Exception
+   *
+   * @return  array (Associative)
+   *
+   */
+  private function _ChangeUserStatus($id, $status)
+  {
+    $this->_CheckId($id);
+
+    return $this->_requestHandler->Put (
+      $this->_GetAPICallURL('/User/' . $id . '/' . $status),
+      $this->_apiKey
+    );
+  }
+
+  /**
    * Activates the requested user.
    *
    * @param   mixed $id (Required) | The user identifier.
@@ -25,12 +46,7 @@ class User extends AbstractAPI
    */
   public function Activate($id)
   {
-    $this->_CheckId($id);
-
-    return $this->_requestHandler->Put (
-      $this->_GetAPICallURL('/User/' . $id . '/Activate'),
-      $this->_apiKey
-    );
+    return $this->_ChangeUserStatus($id, 'Activate');
   }
 
   /**
@@ -45,10 +61,8 @@ class User extends AbstractAPI
    */
   public function AutoLogin($loginName)
   {
-    $loginName = urlencode($loginName);
-
     return $this->_requestHandler->Get (
-      $this->_GetAPICallURL('/Autologin/' . $loginName),
+      $this->_GetAPICallURL('/Autologin/' . urlencode($loginName)),
       $this->_apiKey
     );
   }
@@ -82,12 +96,7 @@ class User extends AbstractAPI
    */
   public function Deactivate($id)
   {
-    $this->_CheckId($id);
-
-    return $this->_requestHandler->Put (
-      $this->_GetAPICallURL('/User/' . $id . '/Deactivate'),
-      $this->_apiKey
-    );
+    return $this->_ChangeUserStatus($id, 'Deactivate');
   }
 
   /**
