@@ -53,6 +53,26 @@ class cURL implements RequestHandlerInterface
   }
 
   /**
+   * Returns the initial option list.
+   *
+   * @return  array
+   *
+   */
+  private function _GetInitialOptionList($sdkVersion)
+  {
+    return [
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_CONNECTTIMEOUT => 30,
+      CURLOPT_TIMEOUT        => 60,
+      CURLOPT_SSL_VERIFYPEER => false,
+      CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
+      CURLOPT_HTTPHEADER     => [
+        'eFrontPro-SDK-Version' => $sdkVersion
+      ]
+    ];
+  }
+
+  /**
    * Set the options to the current cURL session.
    *
    * @throws  cURLException
@@ -145,16 +165,7 @@ class cURL implements RequestHandlerInterface
     }
 
     $this->Reset()->SetOptionList (
-      [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_CONNECTTIMEOUT => 30,
-        CURLOPT_TIMEOUT        => 60,
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
-        CURLOPT_HTTPHEADER     => [
-          'eFrontPro-SDK-Version' => $sdkVersion
-        ]
-      ]
+      $this->_GetInitialOptionList($sdkVersion)
     );
 
     return $this;
