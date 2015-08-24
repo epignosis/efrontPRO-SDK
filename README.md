@@ -32,4 +32,4 @@ You can use [Postman](https://www.getpostman.com/) to test the API. To use it, f
   Use the "Body" section to fill in the key-value pairs of the data you wish to send
 
 
-The EfrontPro team.
+The eFrontPro team.
