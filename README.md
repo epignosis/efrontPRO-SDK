@@ -3,7 +3,7 @@ efrontPRO-SDK
 [![Build Status](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/?branch=master)
 
-eFront PRO provides a comprehensive REST JSON API that allows interaction with remote services. 
+eFrontPro provides a comprehensive REST JSON API that allows interaction with remote services. 
 Authentication is based on an API key that is defined under your installation’s system settings. 
 The functionality provided focuses on performing tasks meaningful for a remote service, such as 
 user creation, course assignment, listing courses etc. In addition, one can use the API to provide 
@@ -32,4 +32,4 @@ You can use [Postman](https://www.getpostman.com/) to test the API. To use it, f
   Use the "Body" section to fill in the key-value pairs of the data you wish to send
 
 
-The Efront PRO team.
+The EfrontPro team.
