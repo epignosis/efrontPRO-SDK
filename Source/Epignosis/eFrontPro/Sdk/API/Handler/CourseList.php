@@ -1,8 +1,8 @@
 <?php
 
-namespace API\Handler;
+namespace Epignosis\eFrontPro\Sdk\API\Handler;
 
-use API\Abstraction\AbstractAPI;
+use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
 
 /**
  * Class CourseList
