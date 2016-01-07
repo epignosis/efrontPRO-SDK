@@ -49,7 +49,7 @@ class eFrontProSDK
    *
    * @var string
    */
-  private $_apiVersion = null;
+  private $_apiVersion = '1.0';
 
   /**
    * The SDK version.
