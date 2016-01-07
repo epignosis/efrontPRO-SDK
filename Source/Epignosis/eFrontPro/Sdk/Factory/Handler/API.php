@@ -46,7 +46,7 @@ class API
    */
   private function _Register($instance)
   {
-    $api = 'API\Handler\\'. $instance;
+    $api = 'Epignosis\eFrontPro\Sdk\API\Handler\\'. $instance;
       
     try {
       $this->_apiList[$instance] = new $api($this->_requestHandler);
