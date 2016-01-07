@@ -17,10 +17,11 @@ class BranchList extends AbstractAPI
   /**
    * Returns the complete list of branches.
    *
-   * @throws  \Exception
+   * @since 1.0.0
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetAll()
   {

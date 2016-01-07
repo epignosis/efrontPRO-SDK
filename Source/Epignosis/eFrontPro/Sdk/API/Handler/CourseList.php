@@ -17,10 +17,11 @@ class CourseList extends AbstractAPI
   /**
    * Returns the complete list of courses.
    *
-   * @throws  \Exception
+   * @since 1.0.0
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetAll()
   {

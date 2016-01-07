@@ -17,12 +17,13 @@ class Group extends AbstractAPI
   /**
    * Returns information about the requested group.
    *
-   * @param   mixed $id (Required) | The group identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The group identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo($id)
   {

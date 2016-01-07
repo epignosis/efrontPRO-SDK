@@ -17,10 +17,11 @@ class System extends AbstractAPI
   /**
    * Returns the system information.
    *
-   * @throws  \Exception
+   * @since 1.0.0
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo()
   {

@@ -17,12 +17,13 @@ class Course extends AbstractAPI
   /**
    * Returns information about the requested course.
    *
-   * @param   mixed $id (Required) | The course identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The course identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo($id)
   {
@@ -36,12 +37,13 @@ class Course extends AbstractAPI
   /**
    * Returns a list of the training sessions that belongs to the requested course.
    *
-   * @param   mixed $id (Required) | The course identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The course identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetTrainingSessions($id)
   {

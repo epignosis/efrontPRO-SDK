@@ -17,12 +17,13 @@ class Category extends AbstractAPI
   /**
    * Returns information about the requested category.
    *
-   * @param   mixed $id (Required) | The category identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The category identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo($id)
   {

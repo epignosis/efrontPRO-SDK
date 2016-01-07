@@ -17,13 +17,13 @@ class Plugin extends AbstractAPI
   /**
    * Validates the plugin name.
    *
-   * @param   string $pluginName (Required) | The plugin name to be
-   *                                          checked.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param string $pluginName (Required) | The plugin name to be checked.
    *
-   * @return  $this
+   * @throws \Exception
    *
+   * @return $this
    */
   private function _CheckPluginName($pluginName)
   {
@@ -37,10 +37,11 @@ class Plugin extends AbstractAPI
   /**
    * Returns a list of the available plugins and their information.
    *
-   * @throws  \Exception
+   * @since 1.0.0
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetAll()
   {
@@ -52,13 +53,13 @@ class Plugin extends AbstractAPI
   /**
    * Returns information about the requested plugin.
    *
-   * @param   string $pluginName (Required) | The plugin name to
-   *                                          retrieve its info.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param string $pluginName (Required) | The plugin name to retrieve its info.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo($pluginName)
   {
@@ -72,16 +73,14 @@ class Plugin extends AbstractAPI
   /**
    * Posts the requested data to be used by the requested plugin.
    *
-   * @param   string $pluginName (Required) | The plugin name to
-   *                                          retrieve its info.
+   * @since 1.0.0
    *
-   * @param   array  $data       (Required) | The data to be send to
-   *                                          the requested plugin.
+   * @param string $pluginName (Required) | The plugin name to retrieve its info.
+   * @param array  $data       (Required) | The data to be send to the requested plugin.
    *
-   * @throws  \Exception
+   * @throws \Exception
    *
-   * @return  array (Associative)
-   *
+   * @return array (Associative)
    */
   public function Notify($pluginName, array $data)
   {

@@ -17,13 +17,14 @@ class BranchUser extends AbstractAPI
   /**
    * Creates a relation between the requested user and branch.
    *
-   * @param   mixed $userId   (Required) | The user identifier.
-   * @param   mixed $branchId (Required) | The branch identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $branchId (Required) | The branch identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function AddRelation($userId, $branchId)
   {

@@ -17,45 +17,45 @@ class CourseUser extends AbstractAPI
   /**
    * Creates a relation between the requested user and course.
    *
-   * @param   mixed $userId   (Required) | The user identifier.
-   * @param   mixed $courseId (Required) | The course identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $courseId (Required) | The course identifier.
+   * @param bool  $force    (Required) | Whether to force the operation if the course belongs to a curriculum, or not.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
-  public function AddRelation($userId, $courseId)
+  public function AddRelation($userId, $courseId, $force = false)
   {
     $this->_CheckId($userId)->_CheckId($courseId);
 
     return $this->_requestHandler->Put (
       $this->_GetAPICallURL('/Course/' . $courseId . '/AddUser'),
       $this->_apiKey,
-      ['UserId' => $userId]
+      ['UserId' => $userId, 'Force' => $force]
     );
   }
 
   /**
-   * Returns the status of the requested user into the requested
-   * course.
+   * Returns the status of the requested user into the requested course.
    *
-   * @param   mixed $userId   (Required) | The user identifier.
-   * @param   mixed $courseId (Required) | The course identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $courseId (Required) | The course identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function CheckStatus($userId, $courseId)
   {
     $this->_CheckId($userId)->_CheckId($courseId);
 
     return $this->_requestHandler->Get (
-      $this->_GetAPICallURL (
-        '/CourseUserStatus/' . $courseId . ',' . $userId
-      ),
+      $this->_GetAPICallURL('/CourseUserStatus/' . $courseId . ',' . $userId),
       $this->_apiKey
     );
   }
@@ -63,13 +63,14 @@ class CourseUser extends AbstractAPI
   /**
    * Removes the relation between the requested user and the course.
    *
-   * @param   mixed $userId   (Required) | The user identifier.
-   * @param   mixed $courseId (Required) | The course identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $courseId (Required) | The course identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function RemoveRelation($userId, $courseId)
   {
@@ -85,25 +86,24 @@ class CourseUser extends AbstractAPI
   /**
    * Updates the status of the requested user in the requested course.
    *
-   * @param   mixed $userId   (Required) | The user identifier.
-   * @param   mixed $courseId (Required) | The course identifier.
-   * @param   array $info     (Optional) | The information to update.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $userId   (Required) | The user identifier.
+   * @param mixed $courseId (Required) | The course identifier.
+   * @param array $info     (Optional) | The information to update.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function UpdateStatus($userId, $courseId, array $info = [])
   {
-      $this->_CheckId($userId)->_CheckId($courseId);
+    $this->_CheckId($userId)->_CheckId($courseId);
 
-      return $this->_requestHandler->Post (
-          $this->_GetAPICallURL (
-              '/CourseUserStatus/' . $courseId . ',' . $userId
-          ),
-          $this->_apiKey,
-          $info
-      );
+    return $this->_requestHandler->Post (
+      $this->_GetAPICallURL('/CourseUserStatus/' . $courseId . ',' . $userId),
+      $this->_apiKey,
+      $info
+    );
   }
 }
