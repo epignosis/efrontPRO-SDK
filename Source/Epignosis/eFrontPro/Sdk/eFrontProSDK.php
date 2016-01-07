@@ -1,65 +1,72 @@
 <?php
 
+namespace Epignosis\eFrontPro\Sdk;
+
 use API\Abstraction\AbstractAPI;
 use Factory\Handler\API as APIHandlerFactory;
 
 /**
  * Class eFrontProSDK
  *
- * @package     SDK
  * @author      EPIGNOSIS
- * @version     1.2.0
- * @release     2015-02-20
- *
+ * @package     Epignosis\eFrontPro\Sdk
+ * @release     2016-01-07
+ * @version     2.0.0
  */
 class eFrontProSDK
 {
   /**
    * The API factory.
    *
-   * @var   APIHandlerFactory
+   * @since 1.0.0
    *
+   * @var APIHandlerFactory
    */
   private $_apiFactory = null;
 
   /**
    * The API key.
    *
-   * @var   string
+   * @since 1.0.0
    *
+   * @var string
    */
   private $_apiKey = null;
 
   /**
    * The API location.
    *
-   * @var   string
+   * @since 1.0.0
    *
+   * @var string
    */
   private $_apiLocation = null;
 
   /**
    * The API version.
    *
-   * @var   string
+   * @since 1.0.0
    *
+   * @var string
    */
   private $_apiVersion = null;
 
   /**
    * The SDK version.
    *
-   * @var   string
+   * @since 1.0.0
    *
+   * @var string
    */
-  private static $_sdkVersion = '1.2.0';
+  private static $_sdkVersion = '2.0.0';
 
 
   /**
    * Constructs the SDK.
    *
-   * @param   APIHandlerFactory $apiFactory
+   * @since 1.0.0
    *
+   * @param APIHandlerFactory $apiFactory
    */
   public function __construct(APIHandlerFactory $apiFactory)
   {
@@ -71,13 +78,13 @@ class eFrontProSDK
   /**
    * Configure the API.
    *
-   * @param   string $apiVersion  (Required) | The API version to be
-   *                                           used.
-   * @param   string $apiLocation (Required) | The API location.
-   * @param   string $apiKey      (Required) | The API key to be used.
+   * @since 1.0.0
    *
-   * @return  $this
+   * @param string $apiVersion  (Required) | The API version to be used.
+   * @param string $apiLocation (Required) | The API location.
+   * @param string $apiKey      (Required) | The API key to be used.
    *
+   * @return $this
    */
   public function Config($apiVersion, $apiLocation, $apiKey)
   {
@@ -91,10 +98,11 @@ class eFrontProSDK
   /**
    * Returns the requested entity of the API.
    *
-   * @param   string $apiType (Required) | The entity type of the API.
+   * @since 1.0.0
    *
-   * @return  AbstractAPI
+   * @param string $apiType (Required) | The entity type of the API.
    *
+   * @return AbstractAPI
    */
   public function GetAPI($apiType)
   {
@@ -107,8 +115,9 @@ class eFrontProSDK
   /**
    * Returns the API key.
    *
-   * @return  string
+   * @since 1.0.0
    *
+   * @return string
    */
   public function GetAPIKey()
   {
@@ -118,8 +127,9 @@ class eFrontProSDK
   /**
    * Returns the API location, for example "my-domain.com/API".
    *
-   * @return  string
+   * @since 1.0.0
    *
+   * @return  string
    */
   public function GetAPILocation()
   {
@@ -129,8 +139,9 @@ class eFrontProSDK
   /**
    * Returns the API version.
    *
-   * @return  string
+   * @since 1.0.0
    *
+   * @return  string
    */
   public function GetAPIVersion()
   {
@@ -140,8 +151,9 @@ class eFrontProSDK
   /**
    * Returns the current SDK version.
    *
-   * @return  string
+   * @since 1.0.0
    *
+   * @return  string
    */
   public function GetSDKVersion()
   {

@@ -1,9 +1,13 @@
 Change-Log
 ==========
+### Version 2.0.0 @ 2016-01-07
+[Changes]
++ Improve auto-loading (PSR-4).
+
 ### Version 1.2.1 @ 2014-05-21
 + QA Improvements.
 
-#### Version 1.2 @ 2014-02-20
+### Version 1.2 @ 2014-02-20
 [Features]
 + SDK source QA improvement.
 + Get information about a specific `Plugin`.
@@ -14,7 +18,7 @@ Change-Log
 + Added *cookie* and *cookie_token* attributes to the response of `User` information retrieval.
 
 
-#### Version 1.0 @ 2014-11-19
+### Version 1.0 @ 2014-11-19
 [Features]
 + Get information about a specific `Branch`.
 + Get the complete list of the `Branches`.
