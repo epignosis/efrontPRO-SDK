@@ -1,32 +1,35 @@
 <?php
 
-namespace Request\Handler;
+namespace Epignosis\eFrontPro\Sdk\Request\Handler;
 
-use Request\Abstraction\RequestHandlerInterface;
-use Request\Exception\cURL as cURLException;
+use Epignosis\eFrontPro\Sdk\Request\Abstraction\RequestHandlerInterface;
+use Epignosis\eFrontPro\Sdk\Request\Exception\cURL as cURLException;
 
 /**
  * Class cURL
  *
- * @package   Request\Handler
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 class cURL implements RequestHandlerInterface
 {
   /**
    * The cURL handler.
    *
-   * @var   Resource
+   * @since 1.0.0
    *
+   * @var Resource
    */
   private $_curl = null;
 
   /**
    * The list of options.
    *
-   * @var   array (Associative)
+   * @since 1.0.0
    *
+   * @var array (Associative)
    */
   private $_optionList = [];
 
@@ -34,19 +37,18 @@ class cURL implements RequestHandlerInterface
   /**
    * Executes the given cURL session.
    *
-   * @throws  cURLException
+   * @since 1.0.0
    *
-   * @return  mixed
+   * @throws cURLException
    *
+   * @return mixed
    */
   private function _Exec()
   {
     $response = curl_exec($this->_curl);
 
     if($response === false) {
-      throw new cURLException (
-        curl_error($this->_curl), curl_errno($this->_curl)
-      );
+      throw new cURLException(curl_error($this->_curl), curl_errno($this->_curl));
     }
 
     return $response;
@@ -55,8 +57,11 @@ class cURL implements RequestHandlerInterface
   /**
    * Returns the initial option list.
    *
-   * @return  array
+   * @since 1.0.0
    *
+   * @param string $sdkVersion (Required) | The SDK version.
+   *
+   * @return array
    */
   private function _GetInitialOptionList($sdkVersion)
   {
@@ -66,19 +71,18 @@ class cURL implements RequestHandlerInterface
       CURLOPT_TIMEOUT        => 60,
       CURLOPT_SSL_VERIFYPEER => false,
       CURLOPT_HTTPAUTH       => CURLAUTH_BASIC,
-      CURLOPT_HTTPHEADER     => [
-        'eFrontPro-SDK-Version' => $sdkVersion
-      ]
+      CURLOPT_HTTPHEADER     => ['eFrontPro-SDK-Version' => $sdkVersion]
     ];
   }
 
   /**
    * Set the options to the current cURL session.
    *
-   * @throws  cURLException
+   * @since 1.0.0
    *
-   * @return  $this
+   * @throws cURLException
    *
+   * @return $this
    */
   private function _SetOptionList()
   {
@@ -92,8 +96,9 @@ class cURL implements RequestHandlerInterface
   /**
    * Constructs the cURL request handler.
    *
-   * @throws  cURLException
+   * @throws cURLException
    *
+   * @since 1.0.0
    */
   public function __construct()
   {
@@ -105,10 +110,11 @@ class cURL implements RequestHandlerInterface
   /**
    * Closes the request handler.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @return      $this
+   * @implements RequestHandlerInterface
    *
+   * @return $this
    */
   public function Close()
   {
@@ -124,13 +130,14 @@ class cURL implements RequestHandlerInterface
   /**
    * Executes an HTTP/GET request and returns its response.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @param       string $url    (Required) | The HTTP/GET URL.
-   * @param       string $apiKey (Required) | The API key.
+   * @implements RequestHandlerInterface
    *
-   * @return      mixed
+   * @param string $url    (Required) | The HTTP/GET URL.
+   * @param string $apiKey (Required) | The API key.
    *
+   * @return mixed
    */
   public function Get($url, $apiKey)
   {
@@ -144,15 +151,15 @@ class cURL implements RequestHandlerInterface
   /**
    * Initializes the request handler.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @param       string $sdkVersion (Required) | The SDK version to
-   *                                              be used.
+   * @implements RequestHandlerInterface
    *
-   * @throws      cURLException
+   * @param string $sdkVersion (Required) | The SDK version to be used.
    *
-   * @return      mixed
+   * @throws cURLException
    *
+   * @return mixed
    */
   public function Init($sdkVersion)
   {
@@ -164,9 +171,7 @@ class cURL implements RequestHandlerInterface
       }
     }
 
-    $this->Reset()->SetOptionList (
-      $this->_GetInitialOptionList($sdkVersion)
-    );
+    $this->Reset()->SetOptionList($this->_GetInitialOptionList($sdkVersion));
 
     return $this;
   }
@@ -174,28 +179,22 @@ class cURL implements RequestHandlerInterface
   /**
    * Executes an HTTP/POST request and returns its response.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @param       string $url               (Required)     | The
-   *                                                         HTTP/POST
-   *                                                         URL.
-   * @param       string $apiKey            (Required)     | The API
-   *                                                         key.
-   * @param       array  $postParameterList (Optional, []) | The POST
-   *                                                         parameter
-   *                                                         list.
+   * @implements RequestHandlerInterface
    *
-   * @return      mixed
+   * @param string $url               (Required)     | The HTTP/POST URL.
+   * @param string $apiKey            (Required)     | The API key.
+   * @param array  $postParameterList (Optional, []) | The POST parameter list.
    *
+   * @return mixed
    */
   public function Post($url, $apiKey, array $postParameterList = [])
   {
     $this->_optionList[CURLOPT_URL]           = $url;
     $this->_optionList[CURLOPT_USERPWD]       = $apiKey . ':';
     $this->_optionList[CURLOPT_CUSTOMREQUEST] = 'POST';
-    $this->_optionList[CURLOPT_POSTFIELDS]    = http_build_query (
-      $postParameterList, '', '&'
-    );
+    $this->_optionList[CURLOPT_POSTFIELDS]    = http_build_query($postParameterList, '', '&');
 
     return $this->_SetOptionList()->_Exec();
   }
@@ -203,28 +202,22 @@ class cURL implements RequestHandlerInterface
   /**
    * Executes an HTTP/PUT request and returns its response.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @param       string $url              (Required)     | The
-   *                                                        HTTP/PUT
-   *                                                        URL.
-   * @param       string $apiKey           (Required)     | The API
-   *                                                        key.
-   * @param       array  $putParameterList (Optional, []) | The PUT
-   *                                                        parameter
-   *                                                        list.
+   * @implements RequestHandlerInterface
    *
-   * @return      mixed
+   * @param string $url              (Required)     | The HTTP/PUT URL.
+   * @param string $apiKey           (Required)     | The API key.
+   * @param array  $putParameterList (Optional, []) | The PUT parameter list.
    *
+   * @return mixed
    */
   public function Put($url, $apiKey, array $putParameterList = [])
   {
     $this->_optionList[CURLOPT_URL]           = $url;
     $this->_optionList[CURLOPT_USERPWD]       = $apiKey . ':';
     $this->_optionList[CURLOPT_CUSTOMREQUEST] = 'PUT';
-    $this->_optionList[CURLOPT_POSTFIELDS]    = http_build_query (
-      $putParameterList, '', '&'
-    );
+    $this->_optionList[CURLOPT_POSTFIELDS]    = http_build_query($putParameterList, '', '&');
 
     return $this->_SetOptionList()->_Exec();
   }
@@ -232,10 +225,11 @@ class cURL implements RequestHandlerInterface
   /**
    * Resets the request handler.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @return      $this
+   * @implements RequestHandlerInterface
    *
+   * @return $this
    */
   public function Reset()
   {
@@ -249,12 +243,13 @@ class cURL implements RequestHandlerInterface
   /**
    * Set the options for the referenced request handler.
    *
-   * @implements  RequestHandlerInterface
+   * @since 1.0.0
    *
-   * @param       array $optionList (Required) | The option list.
+   * @implements RequestHandlerInterface
    *
-   * @return      $this
+   * @param array $optionList (Required) | The option list.
    *
+   * @return $this
    */
   public function SetOptionList(array $optionList = [])
   {

@@ -2,16 +2,16 @@
 
 namespace Epignosis\eFrontPro\Sdk;
 
-use API\Abstraction\AbstractAPI;
-use Factory\Handler\API as APIHandlerFactory;
+use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
+use Epignosis\eFrontPro\Sdk\Factory\Handler\API as APIHandlerFactory;
 
 /**
  * Class eFrontProSDK
  *
- * @author      EPIGNOSIS
- * @package     Epignosis\eFrontPro\Sdk
- * @release     2016-01-07
- * @version     2.0.0
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 class eFrontProSDK
 {
@@ -106,10 +106,9 @@ class eFrontProSDK
    */
   public function GetAPI($apiType)
   {
-    return
-      $this->_apiFactory->Get($apiType)->Config (
-        $this->_apiVersion, $this->_apiLocation, $this->_apiKey
-      );
+    return $this->_apiFactory->Get($apiType)->Config (
+      $this->_apiVersion, $this->_apiLocation, $this->_apiKey
+    );
   }
 
   /**

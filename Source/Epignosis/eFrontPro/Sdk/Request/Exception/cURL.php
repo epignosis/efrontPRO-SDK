@@ -1,13 +1,14 @@
 <?php
 
-namespace Request\Exception;
+namespace Epignosis\eFrontPro\Sdk\Request\Exception;
 
 /**
  * Class cURL
  *
- * @package   Request\Exception
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 final class cURL extends \Exception
 {
