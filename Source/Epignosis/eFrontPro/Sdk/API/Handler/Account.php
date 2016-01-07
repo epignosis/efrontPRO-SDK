@@ -7,22 +7,24 @@ use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
 /**
  * Class Account
  *
- * @package   API\Handler
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 class Account extends AbstractAPI
 {
   /**
    * Returns whether a user exists or not by providing the login name and the password.
    *
-   * @param   string $loginName (Required) | The login name of the user.
-   * @param   string $password (Required) | The password of the user.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param string $loginName (Required) | The login name of the user.
+   * @param string $password (Required) | The password of the user.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function Exists($loginName, $password)
   {

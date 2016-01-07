@@ -7,21 +7,23 @@ use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
 /**
  * Class Branch
  *
- * @package   API\Handler
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 class Branch extends AbstractAPI
 {
   /**
    * Returns information about the requested branch.
    *
-   * @param   mixed $id (Required) | The branch identifier.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The branch identifier.
    *
-   * @return  array (Associative)
+   * @throws \Exception
    *
+   * @return array (Associative)
    */
   public function GetInfo($id)
   {
