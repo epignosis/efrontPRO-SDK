@@ -1,38 +1,45 @@
 <?php
 
-namespace Factory\Handler;
+namespace Epignosis\eFrontPro\Sdk\Factory\Handler;
 
-use API\Abstraction\AbstractAPI;
-use Factory\Exception\API as FactoryAPIException;
-use Request\Abstraction\RequestHandlerInterface;
+use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
+use Epignosis\eFrontPro\Sdk\Factory\Exception\API as FactoryAPIException;
+use Epignosis\eFrontPro\Sdk\Request\Abstraction\RequestHandlerInterface;
 
 /**
  * Class API
  *
- * @package   Factory\Handler
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 class API
 {
   /**
    * The API list which contains the registered entities.
    *
-   * @var   array (Associative)
+   * @since 1.0.0
    *
+   * @var array (Associative)
    */
   private $_apiList = [];
 
   /**
    * The request handler.
    *
-   * @var   RequestHandlerInterface
+   * @since 1.0.0
    *
+   * @var RequestHandlerInterface
    */
   private $_requestHandler = null;
 
 
   /**
+   * Registers the callable.
+   *
+   * @since 1.0.0
+   *
    * @param $instance
    *
    * @throws FactoryAPIException
@@ -43,19 +50,17 @@ class API
       
     try {
       $this->_apiList[$instance] = new $api($this->_requestHandler);
-    }
-    catch (\Exception $e) {
-      throw new FactoryAPIException (
-        'Not possible to register ' . $instance . ' API'
-      );
+    } catch (\Exception $e) {
+      throw new FactoryAPIException('Not possible to register ' . $instance . ' API');
     }
   }
 
   /**
    * Constructs the API factory.
    *
-   * @param   RequestHandlerInterface $requestHandler
+   * @since 1.0.0
    *
+   * @param RequestHandlerInterface $requestHandler
    */
   public function __construct(RequestHandlerInterface $requestHandler)
   {
@@ -65,6 +70,7 @@ class API
   /**
    * Destructs the factory with safety.
    *
+   * @since 1.0.0
    */
   public function __destruct()
   {
@@ -74,11 +80,11 @@ class API
   /**
    * Initializes the API factory.
    *
-   * @param   string $sdkVersion (Required) | The SDK version to be
-   *                                          used.
+   * @since 1.0.0
    *
-   * @return  $this
+   * @param string $sdkVersion (Required) | The SDK version to be used.
    *
+   * @return $this
    */
   public function Init($sdkVersion)
   {
@@ -90,13 +96,13 @@ class API
   /**
    * Returns the requested instance.
    *
-   * @param   string $instance (Required) | The instance to be
-   *                                        fetched.
+   * @since 1.0.0
    *
-   * @throws  FactoryAPIException
+   * @param string $instance (Required) | The instance to be fetched.
    *
-   * @return  AbstractAPI
+   * @throws FactoryAPIException
    *
+   * @return AbstractAPI
    */
   public function Get($instance)
   {

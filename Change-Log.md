@@ -3,6 +3,7 @@ Change-Log
 ### Version 2.0.0 @ 2016-01-07
 [Changes]
 + Improve auto-loading (PSR-4).
++ Improve doc-comments.
 
 ### Version 1.2.1 @ 2014-05-21
 + QA Improvements.
