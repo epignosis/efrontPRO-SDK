@@ -1,22 +1,25 @@
 <?php
 
-namespace API\Abstraction;
+namespace Epignosis\eFrontPro\Sdk\API\Abstraction;
 
-use Request\Abstraction\RequestHandlerInterface;
+use Epignosis\eFrontPro\Sdk\Request\Abstraction\RequestHandlerInterface;
 
 /**
  * Class AbstractAPI
  *
- * @package   API\Abstraction
- * @author    EPIGNOSIS
- *
+ * @author  EPIGNOSIS
+ * @package Epignosis\eFrontPro\Sdk
+ * @since   1.0.0
+ * @version 2.0.0
  */
 abstract class AbstractAPI
 {
   /**
    * The API location.
    *
-   * @var   string
+   * @since 1.0.0
+   *
+   * @var string
    *
    */
   private $_apiLocation = null;
@@ -24,7 +27,9 @@ abstract class AbstractAPI
   /**
    * The API version.
    *
-   * @var   string
+   * @since 1.0.0
+   *
+   * @var string
    *
    */
   private $_apiVersion = null;
@@ -32,16 +37,18 @@ abstract class AbstractAPI
   /**
    * The API key.
    *
-   * @var   string
+   * @since 1.0.0
    *
+   * @var string
    */
   protected $_apiKey = null;
 
   /**
    * The request handler.
    *
-   * @var   RequestHandlerInterface
+   * @since 1.0.0
    *
+   * @var RequestHandlerInterface
    */
   protected $_requestHandler = null;
 
@@ -49,12 +56,13 @@ abstract class AbstractAPI
   /**
    * Validates the requested Id.
    *
-   * @param   mixed $id (Required) | The Id to be validated.
+   * @since 1.0.0
    *
-   * @throws  \Exception
+   * @param mixed $id (Required) | The Id to be validated.
    *
-   * @return  $this
+   * @throws \Exception
    *
+   * @return $this
    */
   protected function _CheckId($id)
   {
@@ -68,10 +76,11 @@ abstract class AbstractAPI
   /**
    * Returns the full API call location.
    *
-   * @param   string $suffix (Optional, null)
+   * @since 1.0.0
    *
-   * @return  string
+   * @param string $suffix (Optional, null)
    *
+   * @return string
    */
   protected function _GetAPICallURL($suffix = null)
   {
@@ -83,8 +92,9 @@ abstract class AbstractAPI
   /**
    * Constructs the API factory.
    *
-   * @param   RequestHandlerInterface $requestHandler
+   * @since 1.0.0
    *
+   * @param RequestHandlerInterface $requestHandler
    */
   public function __construct(RequestHandlerInterface $requestHandler)
   {
@@ -94,13 +104,13 @@ abstract class AbstractAPI
   /**
    * Configure the API factory.
    *
-   * @param   string $apiVersion  (Required) | The API version to be
-   *                                           used.
-   * @param   string $apiLocation (Required) | The API location.
-   * @param   string $apiKey      (Required) | The API key to be used.
+   * @since 1.0.0
    *
-   * @return  $this
+   * @param string $apiVersion  (Required) | The API version to be used.
+   * @param string $apiLocation (Required) | The API location.
+   * @param string $apiKey      (Required) | The API key to be used.
    *
+   * @return $this
    */
   public function Config($apiVersion, $apiLocation, $apiKey)
   {
