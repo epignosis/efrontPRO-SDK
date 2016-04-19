@@ -34,7 +34,7 @@ class CurriculumUser extends AbstractAPI
     return $this->_requestHandler->Put (
       $this->_GetAPICallURL('/Curriculum/' . $curriculumId . '/AddUser'),
       $this->_apiKey,
-      ['UserId' => $userId, 'Force' => $force]
+      ['UserId' => $userId, 'Force' => (string) $force]
     );
   }
 
