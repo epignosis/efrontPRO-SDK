@@ -1,5 +1,13 @@
 Change-Log
 ==========
+### Version 2.1.0 @ 2016-09-21
++ Add new API call, [GET] /curriculums.
++ Version increment.
+
+### Version 2.0.1 @ 2016-04-19
++ Minor fixes and improvements.
++ Version increment.
+
 ### Version 2.0.0 @ 2016-01-07
 [Changes]
 + Improve auto-loading (PSR-4).

@@ -5,19 +5,19 @@ namespace Epignosis\eFrontPro\Sdk\API\Handler;
 use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
 
 /**
- * Class CategoryList
+ * Class CurriculumList
  *
  * @author  EPIGNOSIS
  * @package Epignosis\eFrontPro\Sdk
- * @since   1.0.0
+ * @since   2.1.0
  * @version 2.1.0
  */
-class CategoryList extends AbstractAPI
+class CurriculumList extends AbstractAPI
 {
   /**
-   * Returns the complete list of categories.
+   * Returns the complete list of curriculums.
    *
-   * @since 1.0.0
+   * @since 2.1.0
    *
    * @throws \Exception
    *
@@ -26,7 +26,7 @@ class CategoryList extends AbstractAPI
   public function GetAll()
   {
     return $this->_requestHandler->Get (
-      $this->_GetAPICallURL('/Categories'), $this->_apiKey
+      $this->_GetAPICallURL('/curriculums'), $this->_apiKey
     );
   }
 }
