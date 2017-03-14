@@ -1,9 +1,5 @@
 eFrontPro PHP SDK
 =================
-[![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/epignosis/efrontPRO-SDK/master/LICENSE)
-[![Build Status](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/build.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/xarhsdev/efrontPRO-SDK/?branch=master)
-
 eFrontPro provides a comprehensive REST JSON API that allows interaction with remote services. 
 Authentication is based on an API key that is defined under your installation’s system settings. 
 The functionality provided focuses on performing tasks meaningful for a remote service, such as 
