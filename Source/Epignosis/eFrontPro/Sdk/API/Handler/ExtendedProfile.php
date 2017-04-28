@@ -24,7 +24,7 @@ class ExtendedProfile extends AbstractAPI
   public function ForUsers()
   {
     return $this->_requestHandler->Get (
-      $this->_GetAPICallURL('/extended-profile/users'), $this->_apiKey
+      $this->_GetAPICallURL('/extended-fields/users'), $this->_apiKey
     );
   }
 }
