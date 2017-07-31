@@ -21,7 +21,7 @@ class CourseUser extends AbstractAPI
    *
    * @param mixed $userId   (Required) | The user identifier.
    * @param mixed $courseId (Required) | The course identifier.
-   * @param bool  $force    (Required) | Whether to force the operation if the course belongs to a curriculum, or not.
+   * @param bool  $force    (Required) | Whether to force the operation, or not.
    *
    * @throws \Exception
    *
@@ -67,19 +67,20 @@ class CourseUser extends AbstractAPI
    *
    * @param mixed $userId   (Required) | The user identifier.
    * @param mixed $courseId (Required) | The course identifier.
+   * @param bool  $force    (Required) | Whether to force the operation, or not.
    *
    * @throws \Exception
    *
    * @return array (Associative)
    */
-  public function RemoveRelation($userId, $courseId)
+  public function RemoveRelation($userId, $courseId, $force = false)
   {
     $this->_CheckId($userId)->_CheckId($courseId);
 
     return $this->_requestHandler->Put (
       $this->_GetAPICallURL('/Course/' . $courseId . '/RemoveUser'),
       $this->_apiKey,
-      ['UserId' => $userId]
+      ['UserId' => $userId, 'Force' => (string) $force]
     );
   }
 
