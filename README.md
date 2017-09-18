@@ -66,7 +66,9 @@ in the following chapters.
 
 1.  Access through the command line (cURL):
 
-	`curl -u <MY_API_KEY>: http://my-efront-pro.com/API/v1.0/System/Info`
+	```php
+	curl -u <MY_API_KEY>: http://my-efront-pro.com/API/v1.0/System/Info
+	```
 
 	-   Replace &lt;MY\_API\_KEY&gt; with your API key.
 
@@ -77,7 +79,9 @@ in the following chapters.
 
 2.  Access through the SDK:
 
-    `$eFrontProSDK->GetAPI('System')->GetInfo();`
+    ```php
+    $eFrontProSDK->GetAPI('System')->GetInfo();
+    ```
 
 	-   See more on how to initialize $eFrontProSDK, [here](#SdkInstall).
 
@@ -292,7 +296,7 @@ follow the below steps in order to work with the SDK:
 4.  Now paste the below code in the file you just create in order to
     start making calls:
 
-    ```
+    ```php
 	<?php
     include ‘AutoLoader.php’;
 
@@ -333,7 +337,7 @@ multiple JSON encoded strings and do another work with it.
 Finally it’s __always RECOMMENDED__ as a good practice, to use the SDK
 inside a try/catch block. For example:
 
-```
+```php
 try {
 	// various SDK commands...
 } catch (\Exception $e) {
@@ -346,22 +350,28 @@ try {
 
 ***Check the status of an account.***
 
-`$eFrontProSDK->GetAPI(‘Account’)->Exists($loginName, $password);`
+```php
+$eFrontProSDK->GetAPI(‘Account’)->Exists($loginName, $password);
+```
 
 ***Get all the branches*.**
 
-`$eFrontProSDK->GetAPI(‘BranchList’)->GetAll();`
+```php
+php$eFrontProSDK->GetAPI(‘BranchList’)->GetAll();
+```
 
 ***Get information about a branch*.**
  `GetInfo` method, accepts a positive integer as the branch Id.
 
-`$eFrontProSDK->GetAPI(‘Branch’)->GetInfo($branchId);`
+```php
+$eFrontProSDK->GetAPI(‘Branch’)->GetInfo($branchId);
+```
 
 ***Create a branch*.**
  `Create` method, accepts an associative array as the branch information to be created. The required information consisted
  of the `"name"` and `"url"`, `"parent_ID"` and `"public_ID"` are optional.
 
-```
+```php
 $eFrontProSDK->GetAPI(‘Branch’)->Create([
 	'name' => 'foo', 'url' => 'foo', 'parent_ID' => 10, 'public_ID' => 'abc123'
 ]);
@@ -372,85 +382,115 @@ $eFrontProSDK->GetAPI(‘Branch’)->Create([
  `AddRelation` method, accepts 2 parameters which both are positive integers. The 1<sup>st</sup> one refers to the
  user’s Id and the 2<sup>nd</sup> to the branch’s Id.
 
-
-`$eFrontProSDK->GetAPI(‘BranchUser’)->AddRelation($userId, $branchId);`
-
+```php
+$eFrontProSDK->GetAPI(‘BranchUser’)->AddRelation($userId, $branchId);
+```
 
 ***Get all the categories (tree structured)*.**
 
-`$eFrontProSDK->GetAPI(‘CategoryList’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘CategoryList’)->GetAll();
+```
 
 ***Get information about a category*.**
  `GetInfo` method, accepts a positive integer as the category Id.
 
-`$eFrontProSDK->GetAPI(‘Category’)->GetInfo($categoryId);`
+```php
+$eFrontProSDK->GetAPI(‘Category’)->GetInfo($categoryId);
+```
 
 ***Get all courses*.**
 
-`$eFrontProSDK->GetAPI(‘CourseList’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘CourseList’)->GetAll();
+```
 
 ***Get information about a course*.**
  `GetInfo` method, accepts a positive integer as the course Id.
 
-`$eFrontProSDK->GetAPI(‘Course’)->GetInfo($courseId);`
+```php
+$eFrontProSDK->GetAPI(‘Course’)->GetInfo($courseId);
+```
 
 ***Get all curicula*.**
 
-`$eFrontProSDK->GetAPI(‘Curriculums’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘Curriculums’)->GetAll();
+```
 
 ***Get all the groups*.**
 
-`$eFrontProSDK->GetAPI(‘GroupList’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘GroupList’)->GetAll();
+```
 
 ***Get information about a group*.**
  `GetInfo` method, accepts a positive integer as the group Id.
 
-`$eFrontProSDK->GetAPI(‘Group’)->GetInfo($groupId);`
+```php
+$eFrontProSDK->GetAPI(‘Group’)->GetInfo($groupId);
+```
 
 ***Get all the plugins*.**
 
-`$eFrontProSDK->GetAPI(‘Plugin’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘Plugin’)->GetAll();
+```
 
 ***Get information about a plugin*.**
  `GetInfo` method, accepts a string as the plugin name.
 
-`$eFrontProSDK->GetAPI(‘Plugin’)->GetInfo($pluginName);`
+```php
+$eFrontProSDK->GetAPI(‘Plugin’)->GetInfo($pluginName);
+```
 
 ***Notify the specified plugin by sending some data*.**
  `Notify` method, accepts a string as the plugin name (1<sup>st</sup> parameter) and an
  array (2<sup>nd</sup> parameter) with the custom notification data.
 
-`$eFrontProSDK->GetAPI(‘Plugin’)->Notify($pluginName, $data);`
+```php
+$eFrontProSDK->GetAPI(‘Plugin’)->Notify($pluginName, $data);
+```
 
 ***Get all the users*.**
 
-`$eFrontProSDK->GetAPI(‘UserList’)->GetAll();`
+```php
+$eFrontProSDK->GetAPI(‘UserList’)->GetAll();
+```
 
 ***Get all the users by their e-mail address*.**
  `GetAllByMail` method, accepts a string as the e-mail address of a user.
 
-`$eFrontProSDK->GetAPI(‘UserList’)->GetAllByMail($mailAddress);`
+```php
+$eFrontProSDK->GetAPI(‘UserList’)->GetAllByMail($mailAddress);
+```
 
 ***Get information about a user*.**
  `GetInfo` method, accepts a positive integer as the user Id.
 
-`$eFrontProSDK->GetAPI(‘User’)->GetInfo($userId);`
+```php
+$eFrontProSDK->GetAPI(‘User’)->GetInfo($userId);
+```
 
 ***Activate a user*.**
  `Activate` method, accepts a positive integer as the user Id.
 
-`$eFrontProSDK->GetAPI(‘User’)->Activate($userId);`
+```php
+$eFrontProSDK->GetAPI(‘User’)->Activate($userId);
+```
 
 ***Deactivate a user*.**
  `Deactivate` method, accepts a positive integer as the user Id.
 
-`$eFrontProSDK->GetAPI(‘User’)->Deactivate($userId);`
+```php
+$eFrontProSDK->GetAPI(‘User’)->Deactivate($userId);
+```
 
 ***Create a user*.**
  `Create` method, accepts an associative array as the user’s information to be created. The required information consisted of
  the login, name, surname, email and password fields.
 
-```
+```php
 $eFrontProSDK->GetAPI(‘User’)->Create ([
    'login' => 'foo', 'name' => 'bar', 'surname' => 'baz', 'email' => 'foo@bar.buz', 'password' => 'blackWhale'
 ]);
@@ -464,7 +504,7 @@ $eFrontProSDK->GetAPI(‘User’)->Create ([
  the array are the same as the above method (Create) but aren’t required
  all of them, so you can edit only the information which you want.
 
-```
+```php
 $eFrontProSDK->GetAPI(‘User’)->Edit (
  	$userId, ['login' => 'foo1', 'password' => 'blackWhale123']
 );
@@ -476,16 +516,18 @@ $eFrontProSDK->GetAPI(‘User’)->Edit (
  which both are positive integers. The 1<sup>st</sup> one refers to the
  user’s Id and the 2<sup>nd</sup> to the group’s Id.
 
-
-`$eFrontProSDK->GetAPI(‘UserGroup’)->AddRelation($userId, $groupId);`
-
+```php
+$eFrontProSDK->GetAPI(‘UserGroup’)->AddRelation($userId, $groupId);
+```
 
 ***Remove a user from a group*.**
  `RemoveRelation` method, accepts 2
  parameters which both are positive integers. The 1<sup>st</sup> one
  refers to the user’s Id and the 2<sup>nd</sup> to the group’s Id.
 
-`$eFrontProSDK->GetAPI(‘UserGroup’)->RemoveRelation($userId, $groupId);`
+```php
+$eFrontProSDK->GetAPI(‘UserGroup’)->RemoveRelation($userId, $groupId);
+```
 
 ***Add a user in a course*.**
  `AddRelation` method, accepts 3 parameters
@@ -495,7 +537,9 @@ $eFrontProSDK->GetAPI(‘User’)->Edit (
  course belongs to a curriculum. The last parameter is set to false by
  default.
 
-`$eFrontProSDK->GetAPI(‘CourseUser’)->AddRelation($userId, $courseId, $force);`
+```php
+$eFrontProSDK->GetAPI(‘CourseUser’)->AddRelation($userId, $courseId, $force);
+```
 
 ***Add a user in a curriculum*.**
  `AddRelation` method, accepts 3
@@ -504,7 +548,9 @@ $eFrontProSDK->GetAPI(‘User’)->Edit (
  integer) and 3rd to whether you want to force the operation or not. The
  last parameter is set to false by default.
 
-`$eFrontProSDK->GetAPI(‘CurriculumUser’)->AddRelation($userId, $curriculumId, $force);`
+```php
+$eFrontProSDK->GetAPI(‘CurriculumUser’)->AddRelation($userId, $curriculumId, $force);
+```
 
 ***Check the status of a user in a course*.**
  `CheckStatus` method,
@@ -512,7 +558,9 @@ $eFrontProSDK->GetAPI(‘User’)->Edit (
  1<sup>st</sup> one refers to the user’s Id and the 2<sup>nd</sup> to the
  course’s Id.
 
-`$eFrontProSDK->GetAPI(‘CourseUser’)->CheckStatus($userId, $courseId);`
+```php
+$eFrontProSDK->GetAPI(‘CourseUser’)->CheckStatus($userId, $courseId);
+```
 
 ***Update the status of a user in a course*.**
  `UpdateStatus` method,
@@ -520,7 +568,7 @@ $eFrontProSDK->GetAPI(‘User’)->Edit (
  1<sup>st</sup> one refers to the user’s Id and the 2<sup>nd</sup> to the
  course’s Id. The last is an array which contains the update info.
 
-```
+```php
 $eFrontProSDK->GetAPI(‘CourseUser’)->UpdateStatus (
     $userId, $courseId,
     [‘score’ => 100, ‘to_timestamp’ => 1418893082, ‘status’ => ‘completed’]
@@ -533,34 +581,44 @@ $eFrontProSDK->GetAPI(‘CourseUser’)->UpdateStatus (
  parameters which both are positive integers. The 1<sup>st</sup> one
  refers to the user’s Id and the 2<sup>nd</sup> to the course’s Id.
 
-`$eFrontProSDK->GetAPI(‘CourseUser’)->RemoveRelation($userId, $courseId);`
+```php
+$eFrontProSDK->GetAPI(‘CourseUser’)->RemoveRelation($userId, $courseId);
+```
 
 ***Remove a user from a curriculum*.**
  `RemoveRelation` method, accepts 2
  parameters which both are positive integers. The 1<sup>st</sup> one
  refers to the user’s Id and the 2<sup>nd</sup> to the curriculum’s Id.
 
-`$eFrontProSDK->GetAPI(‘CurriculumUser’)->RemoveRelation($userId, $curriculumId);`
+```php
+$eFrontProSDK->GetAPI(‘CurriculumUser’)->RemoveRelation($userId, $curriculumId);
+```
 
 ***Get information about the system*.**
 
-`$eFrontProSDK->GetAPI(‘System’)->GetInfo();`
+```php
+$eFrontProSDK->GetAPI(‘System’)->GetInfo();
+```
 
 ***Autologin a user*.**
  `Autologin` method, accepts a string as the user’s login name.
 
-`$eFrontProSDK->GetAPI(‘User’)->AutoLogin($loginName);`
+```php
+$eFrontProSDK->GetAPI(‘User’)->AutoLogin($loginName);
+```
 
 ***Logout a user*.**
  `Logout` method, accepts a string as the user’s login name.
 
-`$eFrontProSDK->GetAPI(‘User’)->Logout($loginName);`
+```php
+$eFrontProSDK->GetAPI(‘User’)->Logout($loginName);
+```
 
 ***ADVANCED EXAMPLES***
 
 **Logout all the users:**
 
-```
+```php
 try {
 
     // Fetch all the users:
@@ -597,7 +655,7 @@ try {
 
 **Activate all the users with odd Id and deactivate these with even Id:**
 
-```
+```php
 try {
 
     // Fetch all the users:
@@ -638,7 +696,7 @@ try {
 
 **Create a user (assuming a male), assign him to a course and get the login URL by auto login him:**
 
-```
+```php
 try {
     
     // Create the user:
@@ -703,7 +761,7 @@ try {
 
 **For each registered user, print information about courses:**
 
-```
+```php
 try {
     
     // Fetch the user list:
