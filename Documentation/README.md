@@ -1,4 +1,4 @@
-# eFrontPro-SDK
+# eFront-SDK
 
 ## REST JSON API DOCUMENTATION
 
@@ -37,7 +37,7 @@ You can use [Postman](https://www.getpostman.com/) to test the API. To use it, f
   Use the "Body" section to fill in the key-value pairs of the data you wish to send.
   5. To update a user with id 23, make a PUT request to the following URL with the data required:
   `PUT http://efrontpro.example.com/API/v1.0/User/23`
-  Use the "Body" section to fill in the key-value pairs of the data you wish to send.
+  Use the "Body" section to fill in the key-value pairs of the data you wish to send (Check x-www-form-urlencoded radio button).
 
   ***
 
