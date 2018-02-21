@@ -285,9 +285,7 @@ follow the below steps in order to work with the SDK:
 2.  Extract its contents anywhere you want inside your web server’s
     document root. The document root is the folder where the website
     files for a domain name are stored. You SHOULD contact your
-    administrator in case that you aren’t sure about this action. It’s
-    RECOMMENDED to extract the contents inside the **www** folder of
-    your eFrontPro web application.
+    administrator in case that you aren’t sure about this action. 
 
 3.  Create a php file inside the Source folder (the folder that the
     AutoLoader.php file is located). There is no restriction about the
