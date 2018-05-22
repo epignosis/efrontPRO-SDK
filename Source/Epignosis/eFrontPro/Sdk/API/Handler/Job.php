@@ -39,7 +39,7 @@ class Job extends AbstractAPI
      * @return mixed
      */
     public function Update($id, array $jobInfo) {
-        return $this->_requestHandler->Put(
+        return $this->_requestHandler->Post(
             $this->_GetAPICallURL('/Job/'.$id),
             $this->_apiKey,
             $jobInfo);
