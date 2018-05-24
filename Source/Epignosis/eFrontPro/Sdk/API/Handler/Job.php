@@ -17,7 +17,7 @@ class Job extends AbstractAPI
     /**
      * Creates a job.
      *
-     * @param   array $jobInfo (Required) | The account information.
+     * @param   array $jobInfo (Required) | The Job information.
      *
      * @throws  \Exception
      *
@@ -33,6 +33,8 @@ class Job extends AbstractAPI
     }
 
     /**
+     * Updates a Job
+     *
      * @param array $jobInfo
      * @param       $id
      *
