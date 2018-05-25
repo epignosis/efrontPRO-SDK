@@ -35,7 +35,7 @@ class Job extends AbstractAPI
    * @param   array $info
    *            - The job information to be used. (Required)
    * @return  array (Associative)
-   * @since   1.0.0
+   * @since   3.1.0
    * @throws  \Exception
    *            - In case that is not possible to update the requested job.
    */
