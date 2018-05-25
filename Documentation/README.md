@@ -187,7 +187,8 @@ network/system administrator to do it for you.
 	<tr>				<td> PUT  </td><td> /User/:Id/Activate    </td><td> Activates the specified user.                                                                                                                                                                                                                                              </td></tr>
 	<tr>				<td> PUT  </td><td> /User/:Id/Deactivate  </td><td> Deactivates the specified user.                                                                                                                                                                                                                                            </td></tr>
 	<tr><td> System </td><td> GET </td><td> /System/Info          </td><td> Returns information about the system.                                                                                                                                                                                                                                      </td></tr>
-	<tr><td rowspan="3">Job</td><td>POST</td><td>/Job</td><td>Creates a new job position in the system.</td></tr>
+	<tr><td rowspan="4">Job</td><td>POST</td><td>/Job</td><td>Creates a new job position in the system.</td></tr>
+	<tr><td>PUT</td><td>/Job/:Id</td><td>Edits a specified job position in the system.</td></tr>
 	<tr>						<td>GET</td><td>/Job/:Id</td><td>Gets information about a new job position in the system.</td></tr>
 	<tr>						<td>GET</td><td>/Jobs</td><td>Gets information about all job positions in the system.</td></tr>
 	<tr><td rowspan="2">Job & User</td><td>PUT</td><td>/Job/:Id/AddUser</td><td>Assigns a user to a job position in the system.</td></tr>
