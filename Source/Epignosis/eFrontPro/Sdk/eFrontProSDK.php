@@ -58,7 +58,7 @@ class eFrontProSDK
    *
    * @var string
    */
-  private static $_sdkVersion = '2.1.0';
+  private static $_sdkVersion = '2.2.0';
 
 
   /**
