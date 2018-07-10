@@ -9,7 +9,7 @@ use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
  *
  * @author  EPIGNOSIS
  * @package Epignosis\eFrontPro\Sdk
- * @since   1.0.0
+ * @since   3.2.0
  */
 class UserType extends AbstractAPI
 {
