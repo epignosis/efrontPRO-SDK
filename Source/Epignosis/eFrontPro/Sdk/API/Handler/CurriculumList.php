@@ -10,7 +10,6 @@ use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
  * @author  EPIGNOSIS
  * @package Epignosis\eFrontPro\Sdk
  * @since   2.1.0
- * @version 2.1.0
  */
 class CurriculumList extends AbstractAPI
 {
