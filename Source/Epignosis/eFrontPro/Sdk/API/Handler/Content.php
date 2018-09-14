@@ -9,7 +9,7 @@ use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
  *
  * @author  EPIGNOSIS
  * @package Epignosis\eFrontPro\Sdk
- * @since   1.0.0
+ * @since   3.2.0
  */
 class Content extends AbstractAPI
 {
@@ -27,7 +27,7 @@ class Content extends AbstractAPI
     public function GetInfo($id) {
         $this->_CheckId($id);
 
-        return $this->_requestHandler->Get(
+        return $this->_requestHandler->Get (
             $this->_GetAPICallURL(sprintf('/Content/%s', $id)),
             $this->_apiKey
         );
