@@ -28,7 +28,7 @@ class Content extends AbstractAPI
         $this->_CheckId($id);
 
         return $this->_requestHandler->Get(
-            $this->_GetAPICallURL('/Content/'.$id),
+            $this->_GetAPICallURL(sprintf('/Content/%s', $id)),
             $this->_apiKey
         );
     }
