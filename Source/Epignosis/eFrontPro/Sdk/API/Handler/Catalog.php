@@ -5,7 +5,7 @@ namespace Epignosis\eFrontPro\Sdk\API\Handler;
 use Epignosis\eFrontPro\Sdk\API\Abstraction\AbstractAPI;
 
 /**
- * Class Content
+ * Class Catalog
  *
  * @author  EPIGNOSIS
  * @package Epignosis\eFrontPro\Sdk
@@ -32,5 +32,4 @@ class Catalog extends AbstractAPI
             $this->_apiKey
         );
     }
-
 }
