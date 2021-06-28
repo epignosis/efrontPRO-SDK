@@ -1,5 +1,10 @@
-eFront PHP SDK
+DEPRECATED eFront PHP SDK
 =================
+
+This repository is no longer under maintenance. Please use our [swaggerhub page](https://app.swaggerhub.com/apis/Epignosis/Efront-API/1.0.0#/) instead.
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 eFrontPro provides a comprehensive REST JSON API that allows interaction with remote services. 
 Authentication is based on an API key that is defined under your installation’s system settings. 
 The functionality provided focuses on performing tasks meaningful for a remote service, such as 
